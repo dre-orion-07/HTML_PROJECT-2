@@ -1,63 +1,215 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Delicious Bites Menu</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Nigerian States Directory</title>
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Source Sans 3', sans-serif;
+      background: #f5f0e8;
+      color: #2c2c2c;
+      padding: 40px 20px;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 36px;
+    }
+
+    header h1 {
+      font-family: 'Merriweather', serif;
+      font-size: clamp(1.5rem, 3.5vw, 2.4rem);
+      color: #1a5c38;
+      margin-bottom: 6px;
+    }
+
+    header p {
+      font-size: 0.85rem;
+      color: #777;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    .flag {
+      display: flex;
+      justify-content: center;
+      gap: 4px;
+      margin: 14px auto 0;
+    }
+
+    .flag span {
+      display: inline-block;
+      width: 50px;
+      height: 5px;
+      border-radius: 3px;
+    }
+
+    .flag span:nth-child(1),
+    .flag span:nth-child(3) { background: #008751; }
+    .flag span:nth-child(2) { background: #c8c0a8; }
+
+    .table-wrap {
+      max-width: 1100px;
+      margin: 0 auto;
+      overflow-x: auto;
+      border-radius: 10px;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.10);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 680px;
+      background: #fff;
+    }
+
+    thead {
+      background: #008751;
+    }
+
+    thead th {
+      padding: 14px 18px;
+      text-align: left;
+      font-family: 'Source Sans 3', sans-serif;
+      font-weight: 600;
+      font-size: 0.78rem;
+      letter-spacing: 1.4px;
+      text-transform: uppercase;
+      color: #fff;
+    }
+
+    thead th:first-child { border-radius: 10px 0 0 0; }
+    thead th:last-child  { border-radius: 0 10px 0 0; }
+
+    tbody tr {
+      border-bottom: 1px solid #ede8df;
+      transition: background 0.15s;
+    }
+
+    tbody tr:last-child { border-bottom: none; }
+    tbody tr:nth-child(even) { background: #faf8f4; }
+    tbody tr:hover { background: #edf7f1; }
+
+    td {
+      padding: 11px 18px;
+      font-size: 0.9rem;
+      color: #3a3a3a;
+      vertical-align: middle;
+    }
+
+    td:first-child {
+      color: #aaa;
+      font-size: 0.8rem;
+      width: 42px;
+      text-align: center;
+    }
+
+    td:nth-child(2) {
+      font-weight: 600;
+      color: #1a5c38;
+    }
+
+    td:nth-child(5) {
+      text-align: center;
+    }
+
+    .lga-pill {
+      display: inline-block;
+      background: #e6f4ed;
+      color: #1a5c38;
+      border: 1px solid #b6ddc8;
+      padding: 3px 12px;
+      border-radius: 20px;
+      font-size: 0.83rem;
+      font-weight: 600;
+    }
+
+    td:nth-child(6) {
+      font-style: italic;
+      color: #888;
+      font-size: 0.84rem;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 24px;
+      font-size: 0.78rem;
+      color: #aaa;
+      letter-spacing: 0.5px;
+    }
+  </style>
 </head>
 <body>
 
-  <h1>Delicious Bites Menu</h1>
+<header>
+  <h1>Nigerian States Directory</h1>
+  <p>36 States &amp; Federal Capital Territory</p>
+  <div class="flag">
+    <span></span><span></span><span></span>
+  </div>
+</header>
 
-  <h2>Appetizers</h2>
-  <ul>
-    <li>
-      <strong>Caprese Salad</strong>
-      <p>Fresh tomatoes, mozzarella, and basil drizzled with balsamic glaze.</p>
-    </li>
-    <li>
-      <strong>Spring Rolls</strong>
-      <p>Crispy rolls filled with vegetables and served with sweet chili dipping sauce.</p>
-    </li>
-    <li>
-      <strong>Garlic Bread</strong>
-      <p>Toasted baguette slices brushed with garlic butter and herbs.</p>
-    </li>
-  </ul>
+<div class="table-wrap">
+  <table>
+    <thead>
+      <tr>
+        <th>No</th>
+        <th>State</th>
+        <th>Capital</th>
+        <th>Governor</th>
+        <th>LGAs</th>
+        <th>Slogan</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>1</td><td>Abia</td><td>Umuahia</td><td>Alex Otti</td><td><span class="lga-pill">17</span></td><td>God's Own State</td></tr>
+      <tr><td>2</td><td>Adamawa</td><td>Yola</td><td>Ahmadu Fintiri</td><td><span class="lga-pill">21</span></td><td>Land of Beauty</td></tr>
+      <tr><td>3</td><td>Akwa Ibom</td><td>Uyo</td><td>Umo Eno</td><td><span class="lga-pill">31</span></td><td>Land of Promise</td></tr>
+      <tr><td>4</td><td>Anambra</td><td>Awka</td><td>Charles Soludo</td><td><span class="lga-pill">21</span></td><td>Light of the Nation</td></tr>
+      <tr><td>5</td><td>Bauchi</td><td>Bauchi</td><td>Bala Mohammed</td><td><span class="lga-pill">20</span></td><td>Pearl of Tourism</td></tr>
+      <tr><td>6</td><td>Bayelsa</td><td>Yenagoa</td><td>Douye Diri</td><td><span class="lga-pill">8</span></td><td>Glory of All Lands</td></tr>
+      <tr><td>7</td><td>Benue</td><td>Makurdi</td><td>Hyacinth Alia</td><td><span class="lga-pill">23</span></td><td>Food Basket of the Nation</td></tr>
+      <tr><td>8</td><td>Borno</td><td>Maiduguri</td><td>Babagana Zulum</td><td><span class="lga-pill">27</span></td><td>Home of Peace</td></tr>
+      <tr><td>9</td><td>Cross River</td><td>Calabar</td><td>Bassey Otu</td><td><span class="lga-pill">18</span></td><td>The People's Paradise</td></tr>
+      <tr><td>10</td><td>Delta</td><td>Asaba</td><td>Sheriff Oborevwori</td><td><span class="lga-pill">25</span></td><td>The Big Heart</td></tr>
+      <tr><td>11</td><td>Ebonyi</td><td>Abakaliki</td><td>Francis Nwifuru</td><td><span class="lga-pill">13</span></td><td>Salt of the Nation</td></tr>
+      <tr><td>12</td><td>Edo</td><td>Benin City</td><td>Monday Okpebholo</td><td><span class="lga-pill">18</span></td><td>Heartbeat of the Nation</td></tr>
+      <tr><td>13</td><td>Ekiti</td><td>Ado Ekiti</td><td>Biodun Oyebanji</td><td><span class="lga-pill">16</span></td><td>Fountain of Knowledge</td></tr>
+      <tr><td>14</td><td>Enugu</td><td>Enugu</td><td>Peter Mbah</td><td><span class="lga-pill">17</span></td><td>Coal City State</td></tr>
+      <tr><td>15</td><td>FCT Abuja</td><td>Abuja</td><td>FCT Minister</td><td><span class="lga-pill">6</span></td><td>Centre of Unity</td></tr>
+      <tr><td>16</td><td>Gombe</td><td>Gombe</td><td>Muhammadu Inuwa Yahaya</td><td><span class="lga-pill">11</span></td><td>Jewel in the Savannah</td></tr>
+      <tr><td>17</td><td>Imo</td><td>Owerri</td><td>Hope Uzodimma</td><td><span class="lga-pill">27</span></td><td>Eastern Heartland</td></tr>
+      <tr><td>18</td><td>Jigawa</td><td>Dutse</td><td>Umar Namadi</td><td><span class="lga-pill">27</span></td><td>The New World</td></tr>
+      <tr><td>19</td><td>Kaduna</td><td>Kaduna</td><td>Uba Sani</td><td><span class="lga-pill">23</span></td><td>Centre of Learning</td></tr>
+      <tr><td>20</td><td>Kano</td><td>Kano</td><td>Abba Kabir Yusuf</td><td><span class="lga-pill">44</span></td><td>Centre of Commerce</td></tr>
+      <tr><td>21</td><td>Katsina</td><td>Katsina</td><td>Dikko Radda</td><td><span class="lga-pill">34</span></td><td>Home of Hospitality</td></tr>
+      <tr><td>22</td><td>Kebbi</td><td>Birnin Kebbi</td><td>Nasir Idris</td><td><span class="lga-pill">21</span></td><td>Land of Equity</td></tr>
+      <tr><td>23</td><td>Kogi</td><td>Lokoja</td><td>Ahmed Ododo</td><td><span class="lga-pill">21</span></td><td>Confluence State</td></tr>
+      <tr><td>24</td><td>Kwara</td><td>Ilorin</td><td>AbdulRahman AbdulRazaq</td><td><span class="lga-pill">16</span></td><td>State of Harmony</td></tr>
+      <tr><td>25</td><td>Lagos</td><td>Ikeja</td><td>Babajide Sanwo-Olu</td><td><span class="lga-pill">20</span></td><td>Centre of Excellence</td></tr>
+      <tr><td>26</td><td>Nasarawa</td><td>Lafia</td><td>Abdullahi Sule</td><td><span class="lga-pill">13</span></td><td>Home of Solid Minerals</td></tr>
+      <tr><td>27</td><td>Niger</td><td>Minna</td><td>Mohammed Bago</td><td><span class="lga-pill">25</span></td><td>Power State</td></tr>
+      <tr><td>28</td><td>Ogun</td><td>Abeokuta</td><td>Dapo Abiodun</td><td><span class="lga-pill">20</span></td><td>Gateway State</td></tr>
+      <tr><td>29</td><td>Ondo</td><td>Akure</td><td>Lucky Aiyedatiwa</td><td><span class="lga-pill">18</span></td><td>Sunshine State</td></tr>
+      <tr><td>30</td><td>Osun</td><td>Osogbo</td><td>Ademola Adeleke</td><td><span class="lga-pill">30</span></td><td>State of the Living Spring</td></tr>
+      <tr><td>31</td><td>Oyo</td><td>Ibadan</td><td>Seyi Makinde</td><td><span class="lga-pill">33</span></td><td>Pace Setter State</td></tr>
+      <tr><td>32</td><td>Plateau</td><td>Jos</td><td>Caleb Mutfwang</td><td><span class="lga-pill">17</span></td><td>Home of Peace and Tourism</td></tr>
+      <tr><td>33</td><td>Rivers</td><td>Port Harcourt</td><td>Siminalayi Fubara</td><td><span class="lga-pill">23</span></td><td>Treasure Base of the Nation</td></tr>
+      <tr><td>34</td><td>Sokoto</td><td>Sokoto</td><td>Ahmed Aliyu</td><td><span class="lga-pill">23</span></td><td>Seat of the Caliphate</td></tr>
+      <tr><td>35</td><td>Taraba</td><td>Jalingo</td><td>Agbu Kefas</td><td><span class="lga-pill">16</span></td><td>Nature's Gift to the Nation</td></tr>
+      <tr><td>36</td><td>Yobe</td><td>Damaturu</td><td>Mai Mala Buni</td><td><span class="lga-pill">17</span></td><td>Youth and the Environment</td></tr>
+      <tr><td>37</td><td>Zamfara</td><td>Gusau</td><td>Dauda Lawal</td><td><span class="lga-pill">14</span></td><td>Farming is Our Pride</td></tr>
+    </tbody>
+  </table>
+</div>
 
-  <h2>Main Courses</h2>
-  <ul>
-    <li>
-      <strong>Grilled Salmon</strong>
-      <p>Salmon fillet seasoned and grilled to perfection, served with lemon butter sauce.</p>
-    </li>
-    <li>
-      <strong>Beef Stroganoff</strong>
-      <p>Tender beef strips in a creamy mushroom sauce served over egg noodles.</p>
-    </li>
-    <li>
-      <strong>Veggie Stir Fry</strong>
-      <p>Seasonal vegetables tossed in a savory soy-ginger sauce, served with steamed rice.</p>
-    </li>
-  </ul>
-
-  <h2>Desserts</h2>
-  <ul>
-    <li>
-      <strong>Chocolate Fondue</strong>
-      <p>Assorted fruits and marshmallows served with rich chocolate fondue.</p>
-    </li>
-    <li>
-      <strong>Vanilla Cheesecake</strong>
-      <p>Creamy New York-style cheesecake topped with a fresh strawberry compote.</p>
-    </li>
-    <li>
-      <strong>Mango Sorbet</strong>
-      <p>Light and refreshing sorbet made from ripe mangoes, served in a chilled glass.</p>
-    </li>
-  </ul>
-
-  <p><a href="contact.html">Contact us for reservations</a></p>
+<footer>
+  <p>Nigeria has 774 Local Government Areas in total &nbsp;·&nbsp; Data current as of 2024–2025</p>
+</footer>
 
 </body>
 </html>
